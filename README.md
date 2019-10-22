@@ -1,14 +1,15 @@
 ---
 page_type: sample
 languages:
-- csharp
+- python
+- powershell
 products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
+- azure-active-directory
+description: "This sample demonstrates a Python daemon console app calling a Microsoft Graph that is secured using the Microsoft identity platform."
+urlFragment: ms-identity-python-webapp
 ---
 
-# Official Microsoft Sample
+# A Python console daemon app calling Microsoft Graph
 
 <!-- 
 Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
@@ -18,36 +19,39 @@ Guidance on onboarding samples to docs.microsoft.com/samples: https://review.doc
 Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
 -->
 
-Give a short description for your sample here. What does it do and why is it important?
+## About this sample
 
-## Contents
+### Scenario
 
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
+You want to write a daemon application that consumes organizational data using Microsoft Graph and using **Microsoft Identity Platform** to acquire tokens.
 
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+For details see [Daemon apps scenario](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-daemon-overview)
+
+### Structure of the repository
+
+This repository contains a progressive tutorial made of two parts:
+
+Sub folder                    | Description
+----------------------------- | -----------
+[1-Call-MsGraph-WithSecret](1-Call-MsGraph-WithSecret) | This sample application shows how to use the Microsoft identity platform endpoint to access the data of Microsoft business customers in a long-running, non-interactive process. The daemon application proves its identity using a **client secret**. It uses the OAuth 2 client credentials grant to acquire an access token, which can be used to call the Microsoft Graph and access organizational data </p> ![Topology](./1-Call-MsGraph-WithSecret/ReadmeFiles/topology.svg)
+[2-Call-MsGraph-WithCertificate](2-Call-MsGraph-WithCertificate)  | This variation of the first sample shows how the application proves its identity using a **certificate**. </p>  ![Topology](./2-Call-MsGraph-WithCertificate/ReadmeFiles/topology.svg)
 
 ## Prerequisites
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
+To run this sample, you'll need:
 
-## Setup
+> - [Python 2.7+](https://www.python.org/downloads/release/python-2713/) or [Python 3+](https://www.python.org/downloads/release/python-364/)
+> - An Azure Active Directory (Azure AD) tenant. For more information on how to get an Azure AD tenant, see [how to get an Azure AD tenant.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
+## Setup and run the sample. Learn key concepts
 
-## Runnning the sample
+Download and extract the repository .zip file or, from your shell or command line:
 
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+```Shell
+git clone https://github.com/Azure-Samples/ms-identity-python-daemon.git
+```
 
-## Key concepts
-
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+Then, see the readme of each sub-folder to understand how to setup and run the samples, and learn key concepts 
 
 ## Contributing
 
