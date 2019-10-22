@@ -5,7 +5,7 @@ languages:
 - powershell
 products:
 - azure-active-directory
-description: "This sample demonstrates a Python daemon console app calling a Microsoft Graph that is secured using the Microsoft identity platform."
+description: "This sample demonstrates a Python daemon console app calling the Microsoft Graph that is secured using the Microsoft identity platform."
 urlFragment: ms-identity-python-webapp
 ---
 
@@ -25,7 +25,7 @@ Taxonomies for products and languages: https://review.docs.microsoft.com/new-hop
 
 You want to write a daemon application that consumes organizational data using Microsoft Graph and using **Microsoft Identity Platform** to acquire tokens.
 
-For details see [Daemon apps scenario](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-daemon-overview)
+For details see [Daemon apps scenario](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-daemon-overview).
 
 ### Structure of the repository
 
@@ -47,7 +47,7 @@ To run this sample, you'll need:
 >   ```
 > - An Azure Active Directory (Azure AD) tenant. For more information on how to get an Azure AD tenant, see [how to get an Azure AD tenant.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 
-## Setup and run the sample. Learn key concepts
+## Setup and run the sample
 
 Download and extract the repository .zip file or, from your shell or command line:
 
@@ -55,7 +55,7 @@ Download and extract the repository .zip file or, from your shell or command lin
 git clone https://github.com/Azure-Samples/ms-identity-python-daemon.git
 ```
 
-Then, see the readme of each sub-folder to understand how to setup and run the samples, and learn key concepts 
+Then, see the readme of each sub-folder to understand how to setup and run the samples, and learn key concepts.
 
 ## Contributing
 
