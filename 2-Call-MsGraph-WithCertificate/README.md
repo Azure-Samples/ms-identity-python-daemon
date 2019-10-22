@@ -133,7 +133,7 @@ Alternatively you can use an existing certificate if you have one.
    - Click the **Add a permission** button and then,
    - Ensure that the **Microsoft APIs** tab is selected
    - In the *Commonly used Microsoft APIs* section, click on **Microsoft Graph**
-   - In the **Application permissions** section, ensure that the right permissions are checked: **User.ReadBasic.All**
+   - In the **Application permissions** section, ensure that the right permissions are checked: **User.Read.All**
    - Select the **Add permissions** button
 
 1. At this stage permissions are assigned correctly but the client app does not allow interaction.
