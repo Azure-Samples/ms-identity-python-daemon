@@ -42,9 +42,9 @@ To run this sample, you'll need:
 
 > - [Python 2.7+](https://www.python.org/downloads/release/python-2713/) or [Python 3+](https://www.python.org/downloads/release/python-364/)
 > - MSAL.Python
-    ```Python
-    pip msal
-    ```
+>   ```Python
+>   pip msal
+>   ```
 > - An Azure Active Directory (Azure AD) tenant. For more information on how to get an Azure AD tenant, see [how to get an Azure AD tenant.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 
 ## Setup and run the sample. Learn key concepts
