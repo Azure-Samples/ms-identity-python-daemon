@@ -41,7 +41,7 @@ Sub folder                    | Description
 To run this sample, you'll need:
 
 > - [Python 2.7+](https://www.python.org/downloads/release/python-2713/) or [Python 3+](https://www.python.org/downloads/release/python-364/)
-> - MSAL.Python
+> - MSAL Python
 >   ```Python
 >   pip msal
 >   ```
