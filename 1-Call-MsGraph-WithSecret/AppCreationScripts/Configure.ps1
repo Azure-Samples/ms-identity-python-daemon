@@ -134,6 +134,37 @@ Function UpdateTextFile([string] $configFilePath, [System.Collections.HashTable]
     Set-Content -Path $configFilePath -Value $lines -Force
 }
 
+Function ReplaceInLine([string] $line, [string] $key, [string] $value)
+{
+    $index = $line.IndexOf($key)
+    if ($index -ige 0)
+    {
+        $index2 = $index+$key.Length
+        $line = $line.Substring(0, $index) + $value + $line.Substring($index2)
+    }
+    return $line
+}
+
+Function ReplaceInTextFile([string] $configFilePath, [System.Collections.HashTable] $dictionary)
+{
+    $lines = Get-Content $configFilePath
+    $index = 0
+    while($index -lt $lines.Length)
+    {
+        $line = $lines[$index]
+        foreach($key in $dictionary.Keys)
+        {
+            if ($line.Contains($key))
+            {
+                $lines[$index] = ReplaceInLine $line $key $dictionary[$key]
+            }
+        }
+        $index++
+    }
+
+    Set-Content -Path $configFilePath -Value $lines -Force
+}
+
 
 Set-Content -Value "<html><body><table>" -Path createdApps.html
 Add-Content -Value "<thead><tr><th>Application</th><th>AppId</th><th>Url in the Azure portal</th></tr></thead><tbody>" -Path createdApps.html
@@ -217,7 +248,7 @@ Function ConfigureApplications
    # Add Required Resources Access (from 'client' to 'Microsoft Graph')
    Write-Host "Getting access from 'client' to 'Microsoft Graph'"
    $requiredPermissions = GetRequiredPermissions -applicationDisplayName "Microsoft Graph" `
-                                                -requiredApplicationPermissions "User.ReadBasic.All" `
+                                                -requiredApplicationPermissions "User.Read.All" `
 
    $requiredResourcesAccess.Add($requiredPermissions)
 
@@ -226,10 +257,16 @@ Function ConfigureApplications
    Write-Host "Granted permissions."
 
    # Update config file for 'client'
-   $configFile = $pwd.Path + "..\parameters.json"
+   $configFile = $pwd.Path + "\..\parameters.json"
    Write-Host "Updating the sample code ($configFile)"
-   $dictionary = @{ "authority" = https://login.microsoftonline.com/$tenantName;"client_id" = $clientAadApplication.AppId;"secret" = $clientAppKey };
+   $dictionary = @{ "client_id" = $clientAadApplication.AppId;"secret" = $clientAppKey };
    UpdateTextFile -configFilePath $configFile -dictionary $dictionary
+
+   # Update config file for 'client'
+   $configFile = $pwd.Path + "\..\parameters.json"
+   Write-Host "Updating the sample code ($configFile)"
+   $dictionary = @{ "organizations" = $tenantName };
+   ReplaceInTextFile -configFilePath $configFile -dictionary $dictionary
    Write-Host ""
    Write-Host -ForegroundColor Green "------------------------------------------------------------------------------------------------" 
    Write-Host "IMPORTANT: Please follow the instructions below to complete a few manual step(s) in the Azure portal":
