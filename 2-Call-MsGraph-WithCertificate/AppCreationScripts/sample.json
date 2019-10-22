@@ -52,7 +52,7 @@
         },
         {
           "key": "thumbprint",
-          "value": "$thumbprint"
+          "value": "$certBase64Thumbprint"
         }
       ]
     },
