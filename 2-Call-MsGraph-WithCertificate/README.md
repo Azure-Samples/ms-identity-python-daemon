@@ -83,6 +83,13 @@ If you want to use this automation:
    > Other ways of running the scripts are described in [App Creation Scripts](./AppCreationScripts/AppCreationScripts.md)
 
 1. Run the sample
+   You'll need to install the dependencies using pip as follows:
+  
+   ```Shell
+    pip install -r requirements.txt
+    ```
+
+    Run `confidential_client_certificate_sample.py` with the parameters for the app:
 
    ```Shell
    python confidential_client_certificate_sample.py parameters.json
@@ -159,7 +166,13 @@ Open the `parameters.json` file
 
 ### Step 4: Run the sample
 
-Start the application, it will display the users in the tenant.
+You'll need to install the dependencies using pip as follows:
+  
+```Shell
+pip install -r requirements.txt
+```
+
+Start the application, it will display some Json string containing the users in the tenant.
 
 ```Shell
 python confidential_client_certificate_sample.py parameters.json
