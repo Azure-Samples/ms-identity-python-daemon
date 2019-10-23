@@ -7,7 +7,7 @@ products:
   - azure-active-directory
   - dotnet-core
   - office-ms-graph
-description: "Python daemon console app using MSAL.Pyton to get an access token and call Microsoft Graph (client secret variation)."
+description: "Python daemon console app using MSAL Python to get an access token and call Microsoft Graph (client secret variation)."
 ---
 
 # A simple Python daemon console application calling Microsoft Graph with its own identity (client secret variation)
@@ -18,7 +18,7 @@ description: "Python daemon console app using MSAL.Pyton to get an access token 
 
 This sample application shows how to use the [Microsoft identity platform endpoint](http://aka.ms/aadv2) to access the data of Microsoft business customers in a long-running, non-interactive process.  It uses the [OAuth 2 client credentials grant](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) to acquire an access token, which can be used to call the [Microsoft Graph](https://graph.microsoft.io) and access organizational data
 
-The app is Python Console application. It gets the list of users in an Azure AD tenant by using `Microsoft Authentication Library (MSAL) for .NET` to acquire a token.
+The app is Python Console application. It gets the list of users in an Azure AD tenant by using `Microsoft Authentication Library (MSAL) for Python` to acquire a token.
 
 ## Scenario
 
@@ -235,17 +235,17 @@ Content: {
 
 ## Variation: daemon application using client credentials with certificates
 
-See [..\2-Call-MsGraph-WithCertificate](..\2-Call-MsGraph-WithCertificate)
+See [../2-Call-MsGraph-WithCertificate](../2-Call-MsGraph-WithCertificate)
 
 ## Community Help and Support
 
 Use [Stack Overflow](http://stackoverflow.com/questions/tagged/msal) to get support from the community.
 Ask your questions on Stack Overflow first and browse existing issues to see if someone has asked your question before.
-Make sure that your questions or comments are tagged with [`msal` `dotnet`].
+Make sure that your questions or comments are tagged with [`msal` `python`].
 
 If you find a bug in the sample, please raise the issue on [GitHub Issues](../../issues).
 
-If you find a bug in msal.Net, please raise the issue on [MSAL.NET GitHub Issues](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues).
+If you find a bug in Msal Python, please raise the issue on [MSAL Python GitHub Issues](https://github.com/AzureAD/microsoft-authentication-library-for-python/issues).
 
 To provide a recommendation, visit the following [User Voice page](https://feedback.azure.com/forums/169401-azure-active-directory).
 

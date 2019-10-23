@@ -7,7 +7,7 @@ products:
   - azure-active-directory
   - dotnet-core
   - office-ms-graph
-description: "Python daemon console app using MSAL.Pyton to get an access token and call Microsoft Graph (client secret variation)."
+description: "Python daemon console app using MSAL Python to get an access token and call Microsoft Graph (client secret variation)."
 ---
 
 # A simple Python daemon console application calling Microsoft Graph with its own identity (client certificate variation)
@@ -16,9 +16,9 @@ description: "Python daemon console app using MSAL.Pyton to get an access token 
 
 ### Overview
 
-This sample application shows how to use the [Microsoft identity platform endpoint](http://aka.ms/aadv2) to access the data of Microsoft business customers in a long-running, non-interactive process.  It uses the [OAuth 2 client credentials grant](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) to acquire an access token, which can be used to call the [Microsoft Graph](https://graph.microsoft.io) and access organizational data
+This sample application shows how to use the [Microsoft identity platform endpoint](http://aka.ms/aadv2) to access the data of Microsoft business customers in a long-running, non-interactive process.  It uses the [OAuth 2 client credentials grant](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) to acquire an access token, which can be used to call the [Microsoft Graph](https://graph.microsoft.io) and access organizational data.
 
-The app is Python Console application. It gets the list of users in an Azure AD tenant by using `Microsoft Authentication Library (MSAL) for .NET` to acquire a token.
+The app is a Python Console application. It gets the list of users in an Azure AD tenant by using `Microsoft Authentication Library (MSAL) for Python` to acquire a token.
 
 ## Scenario
 
@@ -54,10 +54,10 @@ git clone https://github.com/Azure-Samples/ms-identity-python-daemon.git
 Go to the `"2-Call-MsGraph-WithCertificat"` folder
 
 ```Shell
-cd "2-Call-MsGraph-WithCertificate"
+cd 2-Call-MsGraph-WithCertificate
 ```
 
-or download and exact the repository .zip file.
+or download and extract the repository .zip file.
 
 > Given that the name of the sample is pretty long, you might want to clone it in a folder close to the root of your hard drive, to avoid file size limitations on Windows.
 
@@ -88,7 +88,7 @@ If you want to use this automation:
    python confidential_client_certificate_sample.py parameters.json
    ```
 
-If ou don't want to use this automation, follow the steps below
+If you don't want to use this automation, follow the steps below:
 
 #### Choose the Azure AD tenant where you want to create your applications
 
@@ -251,17 +251,17 @@ Content: {
 
 ## Variation: daemon application using client credentials with client secret
 
-For the other variation, see [..\1-Call-MsGraph-WithSecret](..\1-Call-MsGraph-WithSecret)
+For the other variation, see [../1-Call-MsGraph-WithSecret](../1-Call-MsGraph-WithSecret)
 
 ## Community Help and Support
 
 Use [Stack Overflow](http://stackoverflow.com/questions/tagged/msal) to get support from the community.
 Ask your questions on Stack Overflow first and browse existing issues to see if someone has asked your question before.
-Make sure that your questions or comments are tagged with [`msal` `dotnet`].
+Make sure that your questions or comments are tagged with [`msal` `python`].
 
 If you find a bug in the sample, please raise the issue on [GitHub Issues](../../issues).
 
-If you find a bug in msal.Net, please raise the issue on [MSAL.NET GitHub Issues](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues).
+If you find a bug in Msal Python, please raise the issue on [MSAL Python GitHub Issues](https://github.com/AzureAD/microsoft-authentication-library-for-python/issues).
 
 To provide a recommendation, visit the following [User Voice page](https://feedback.azure.com/forums/169401-azure-active-directory).
 
