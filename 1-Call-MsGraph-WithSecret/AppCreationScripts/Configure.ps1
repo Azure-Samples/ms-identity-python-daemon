@@ -65,7 +65,7 @@ Function AddResourcePermission($requiredAccess, `
 }
 
 #
-# Exemple: GetRequiredPermissions "Microsoft Graph"  "Graph.Read|User.Read"
+# Example: GetRequiredPermissions "Microsoft Graph"  "Graph.Read|User.Read"
 # See also: http://stackoverflow.com/questions/42164581/how-to-configure-a-new-azure-ad-application-through-powershell
 Function GetRequiredPermissions([string] $applicationDisplayName, [string] $requiredDelegatedPermissions, [string]$requiredApplicationPermissions, $servicePrincipal)
 {
@@ -165,9 +165,10 @@ Function ReplaceInTextFile([string] $configFilePath, [System.Collections.HashTab
     Set-Content -Path $configFilePath -Value $lines -Force
 }
 
-
 Set-Content -Value "<html><body><table>" -Path createdApps.html
 Add-Content -Value "<thead><tr><th>Application</th><th>AppId</th><th>Url in the Azure portal</th></tr></thead><tbody>" -Path createdApps.html
+
+$ErrorActionPreference = "Stop"
 
 Function ConfigureApplications
 {
@@ -176,7 +177,6 @@ Function ConfigureApplications
    configuration files in the client and service project  of the visual studio solution (App.Config and Web.Config)
    so that they are consistent with the Applications parameters
 #> 
-
     $commonendpoint = "common"
 
     # $tenantId is the Active Directory Tenant. This is a GUID which represents the "Directory ID" of the AzureAD tenant
@@ -208,7 +208,7 @@ Function ConfigureApplications
     $tenant = Get-AzureADTenantDetail
     $tenantName =  ($tenant.VerifiedDomains | Where { $_._Default -eq $True }).Name
 
-    # Get the user running the script
+    # Get the user running the script to add the user as the app owner
     $user = Get-AzureADUser -ObjectId $creds.Account.Id
 
    # Create the client AAD application
@@ -218,12 +218,14 @@ Function ConfigureApplications
    $fromDate = [DateTime]::Now;
    $key = CreateAppKey -fromDate $fromDate -durationInYears 2 -pw $pw
    $clientAppKey = $pw
+   # create the application 
    $clientAadApplication = New-AzureADApplication -DisplayName "python-daemon-console" `
                                                   -ReplyUrls "https://daemon" `
                                                   -IdentifierUris "https://$tenantName/python-daemon-console" `
                                                   -PasswordCredentials $key `
                                                   -PublicClient $False
 
+   # create the service principal of the newly created application 
    $currentAppId = $clientAadApplication.AppId
    $clientServicePrincipal = New-AzureADServicePrincipal -AppId $currentAppId -Tags {WindowsAzureActiveDirectoryIntegratedApp}
 
@@ -265,7 +267,7 @@ Function ConfigureApplications
    # Update config file for 'client'
    $configFile = $pwd.Path + "\..\parameters.json"
    Write-Host "Updating the sample code ($configFile)"
-   $dictionary = @{ "organizations" = $tenantName };
+   $dictionary = @{ "Enter_the_Tenant_Name_Here" = $tenantName };
    ReplaceInTextFile -configFilePath $configFile -dictionary $dictionary
    Write-Host ""
    Write-Host -ForegroundColor Green "------------------------------------------------------------------------------------------------" 
@@ -282,7 +284,8 @@ Function ConfigureApplications
 # Pre-requisites
 if ((Get-Module -ListAvailable -Name "AzureAD") -eq $null) { 
     Install-Module "AzureAD" -Scope CurrentUser 
-} 
+}
+
 Import-Module AzureAD
 
 # Run interactively (will ask you for the tenant ID)

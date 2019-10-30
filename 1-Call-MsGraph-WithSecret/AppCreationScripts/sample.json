@@ -62,7 +62,7 @@
       "SettingFile": "\\..\\parameters.json",
       "Mappings": [
         {
-          "key": "organizations",
+          "key": "Enter_the_Tenant_Name_Here",
           "value": "$tenantName"
         }
       ]
