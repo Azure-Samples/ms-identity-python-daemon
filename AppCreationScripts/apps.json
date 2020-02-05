@@ -40,7 +40,7 @@
         ],
        "codeConfigurations": [	
         {
-		      "settingFile": "ms-identity-python-daemon/1-Call-MsGraph-WithSecret/parameters.json", 
+		      "settingFile": "/1-Call-MsGraph-WithSecret/parameters.json", 
 		      "replaceTokens": {
              "appId": "your_client_id",
              "tenantId": "Enter_the_Tenant_Name_Here",
