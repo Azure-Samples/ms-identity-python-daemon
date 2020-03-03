@@ -33,8 +33,8 @@ This repository contains a progressive tutorial made of two parts:
 
 Sub folder                    | Description
 ----------------------------- | -----------
-[1-Call-MsGraph-WithSecret](1-Call-MsGraph-WithSecret) | This sample application shows how to use the Microsoft identity platform endpoint to access the data of Microsoft business customers in a long-running, non-interactive process. The daemon application proves its identity using a **client secret**. It uses the OAuth 2 client credentials grant to acquire an access token, which can be used to call the Microsoft Graph and access organizational data </p> ![Topology](./1-Call-MsGraph-WithSecret/ReadmeFiles/topology.svg)
-[2-Call-MsGraph-WithCertificate](2-Call-MsGraph-WithCertificate)  | This variation of the first sample shows how the application proves its identity using a **certificate**. </p>  ![Topology](./2-Call-MsGraph-WithCertificate/ReadmeFiles/topology.svg)
+[1-Call-MsGraph-WithSecret](https://github.com/Azure-Samples/ms-identity-python-daemon/tree/master/1-Call-MsGraph-WithSecret) | This sample application shows how to use the Microsoft identity platform endpoint to access the data of Microsoft business customers in a long-running, non-interactive process. The daemon application proves its identity using a **client secret**. It uses the OAuth 2 client credentials grant to acquire an access token, which can be used to call the Microsoft Graph and access organizational data </p> ![Topology](./1-Call-MsGraph-WithSecret/ReadmeFiles/topology.svg)
+[2-Call-MsGraph-WithCertificate](https://github.com/Azure-Samples/ms-identity-python-daemon/tree/master/2-Call-MsGraph-WithCertificate)  | This variation of the first sample shows how the application proves its identity using a **certificate**. </p>  ![Topology](./2-Call-MsGraph-WithCertificate/ReadmeFiles/topology.svg)
 
 ## Prerequisites
 
