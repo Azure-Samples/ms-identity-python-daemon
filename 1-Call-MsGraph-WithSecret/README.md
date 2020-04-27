@@ -76,7 +76,7 @@ If you want to use this automation:
    ```PowerShell
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
    ```
-   Or if you're still facing issues. Go to the containing forlder of the configure script and in PowerShell run:
+   Or if you're still facing issues, go to the containing folder of the configure script and run in PowerShell:
    ```
    Unblock-File -Path .\Configure.ps1
    ```
