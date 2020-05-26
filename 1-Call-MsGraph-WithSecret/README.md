@@ -76,6 +76,10 @@ If you want to use this automation:
    ```PowerShell
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
    ```
+   Or if you're still facing issues, go to the containing folder of the configure script and run in PowerShell:
+   ```
+   Unblock-File -Path .\Configure.ps1
+   ```
 1. Run the script to create your Azure AD application and configure the code of the sample application accordingly. 
    ```PowerShell
    .\AppCreationScripts\Configure.ps1
