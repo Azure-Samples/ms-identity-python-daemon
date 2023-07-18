@@ -218,8 +218,8 @@ The relevant code for this sample is in the `confidential_client_secret_sample.p
     result = app.acquire_token_silent(config["scope"], account=None)
 
     if not result:
-    logging.info("No suitable token exists in cache. Let's get a new one from AAD.")
-    result = app.acquire_token_for_client(scopes=config["scope"])
+        logging.info("No suitable token exists in cache. Let's get a new one from AAD.")
+        result = app.acquire_token_for_client(scopes=config["scope"])
     ```
 
 4. Call the API
@@ -232,7 +232,7 @@ The relevant code for this sample is in the `confidential_client_secret_sample.p
         graph_data = requests.get(  # Use token to call downstream service
         config["endpoint"],
         headers={'Authorization': 'Bearer ' + result['access_token']}, ).json()
-    print("Users from graph: " + str(graph_data))
+        print("Users from graph: " + str(graph_data))
     else:
         print(result.get("error"))
         print(result.get("error_description"))
