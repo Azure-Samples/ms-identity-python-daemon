@@ -11,7 +11,7 @@ urlFragment: ms-identity-python-webapp
 
 # A Python console daemon app calling Microsoft Graph
 
-<!-- 
+<!--
 Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
 
 Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
@@ -41,10 +41,6 @@ Sub folder                    | Description
 To run this sample, you'll need:
 
 > - [Python 2.7+](https://www.python.org/downloads/release/python-2713/) or [Python 3+](https://www.python.org/downloads/release/python-364/)
-> - MSAL Python
->   ```Python
->   pip msal
->   ```
 > - An Azure Active Directory (Azure AD) tenant. For more information on how to get an Azure AD tenant, see [how to get an Azure AD tenant.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 
 ## Setup and run the sample
