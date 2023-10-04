@@ -5,7 +5,7 @@ languages:
   - azurepowershell
 products:
   - azure-active-directory
-  - dotnet-core
+  - dotnet
   - office-ms-graph
 description: "Python daemon console app using MSAL Python to get an access token and call Microsoft Graph (client secret variation)."
 ---
