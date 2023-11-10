@@ -29,7 +29,7 @@ The console application:
 
 ![Topology](./ReadmeFiles/topology.svg)
 
-For more information on the concepts used in this sample, be sure to read the [Daemon app scenario](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-overview) and, if you're insterested in protocol details, the [Microsoft identity platform endpoint client credentials protocol documentation](https://azure.microsoft.com/documentation/articles/active-directory-v2-protocols-oauth-client-creds).
+For more information on the concepts used in this sample, be sure to read the [Daemon app scenario](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-overview) and, if you're interested in protocol details, the [Microsoft identity platform endpoint client credentials protocol documentation](https://azure.microsoft.com/documentation/articles/active-directory-v2-protocols-oauth-client-creds).
 
 > ### Daemon applications can use two forms of secrets to prove their identity to the Microsoft identity platform:
 >
@@ -51,7 +51,7 @@ From your shell or command line:
 git clone https://github.com/Azure-Samples/ms-identity-python-daemon.git
 ```
 
-Go to the `"2-Call-MsGraph-WithCertificat"` folder
+Go to the `"2-Call-MsGraph-WithCertificate"` folder
 
 ```Shell
 cd 2-Call-MsGraph-WithCertificate
