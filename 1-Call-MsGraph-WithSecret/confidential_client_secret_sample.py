@@ -2,7 +2,9 @@
 The configuration file would look like this (sans those // comments):
 
 {
+    "note": "You configure either the authority setting when you are using Entra ID or External ID, or the oidc_authority setting when you are using External ID with its custom domain. Change the other one to null",
     "authority": "https://login.microsoftonline.com/Enter_the_Tenant_Name_Here",
+    "oidc_authority": "https://login.contoso.com/Enter_the_Tenant_Name_Here/v2.0",
     "client_id": "your_client_id",
     "scope": ["https://graph.microsoft.com/.default"],
         // For more information about scopes for an app, refer:
@@ -36,7 +38,9 @@ config = json.load(open(sys.argv[1]))
 
 # Create a preferably long-lived app instance which maintains a token cache.
 app = msal.ConfidentialClientApplication(
-    config["client_id"], authority=config["authority"],
+    config["client_id"],
+    authority=config.get("authority"),  # For Entra ID or External ID,
+    oidc_authority=config.get("oidc_authority"),  # For External ID with custom domain
     client_credential=config["secret"],
     # token_cache=...  # Default cache is in memory only.
                        # You can learn how to use SerializableTokenCache from
